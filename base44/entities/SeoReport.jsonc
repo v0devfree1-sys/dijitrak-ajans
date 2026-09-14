@@ -1,0 +1,78 @@
+{
+  "name": "SeoReport",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "Analyzed URL"
+    },
+    "overall_score": {
+      "type": "number",
+      "description": "Overall SEO score 0-100"
+    },
+    "performance_score": {
+      "type": "number"
+    },
+    "accessibility_score": {
+      "type": "number"
+    },
+    "best_practices_score": {
+      "type": "number"
+    },
+    "seo_score": {
+      "type": "number"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "meta_data": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "has_sitemap": {
+          "type": "boolean"
+        },
+        "has_robots": {
+          "type": "boolean"
+        },
+        "is_mobile_friendly": {
+          "type": "boolean"
+        },
+        "has_ssl": {
+          "type": "boolean"
+        },
+        "page_speed": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

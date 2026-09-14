@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 245 58% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 245 58% 51%;
+    --chart-1: 245 58% 51%;
+    --chart-2: 172 66% 50%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 340 75% 55%;
+    --chart-5: 200 70% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 245 58% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 245 58% 51%;
+  }
+
+  .dark {
+    --background: 224 32% 8%;
+    --foreground: 210 40% 98%;
+    --card: 224 32% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 32% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 245 58% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 224 20% 16%;
+    --muted-foreground: 218 11% 55%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 20% 18%;
+    --input: 224 20% 18%;
+    --ring: 245 58% 58%;
+    --chart-1: 245 58% 58%;
+    --chart-2: 172 66% 50%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 340 75% 55%;
+    --chart-5: 200 70% 50%;
+    --sidebar-background: 224 32% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 245 58% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 20% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 224 20% 18%;
+    --sidebar-ring: 245 58% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Apple-style smooth spring transitions for all interactive elements */
+  button, a, [role="button"], input[type="range"], summary {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Glass surfaces get a fluid lift/blur transition */
+  .glass, .glass-strong, .glass-dark, .glass-primary {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Native press feedback */
+  button:active, [role="button"]:active, a:active {
+    transform: scale(0.97);
+  }
+}
+
+@layer components {
+  .glass {
+    background: hsl(var(--card) / 0.55);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+  .glass-strong {
+    background: hsl(var(--card) / 0.75);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid hsl(var(--border) / 0.7);
+  }
+  .glass-dark {
+    background: hsl(var(--foreground) / 0.4);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid hsl(var(--background) / 0.12);
+  }
+  .glass-primary {
+    background: hsl(var(--primary) / 0.12);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--primary) / 0.25);
+  }
+}

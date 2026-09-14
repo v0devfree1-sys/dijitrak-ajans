@@ -1,0 +1,84 @@
+{
+  "name": "ProjectRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Client name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Client email"
+    },
+    "company": {
+      "type": "string"
+    },
+    "project_type": {
+      "type": "string",
+      "enum": [
+        "website",
+        "ecommerce",
+        "mobile_app",
+        "seo_optimization",
+        "redesign",
+        "custom"
+      ],
+      "description": "Type of project"
+    },
+    "budget_range": {
+      "type": "string",
+      "enum": [
+        "1000-5000",
+        "5000-10000",
+        "10000-25000",
+        "25000-50000",
+        "50000+"
+      ],
+      "description": "Budget range"
+    },
+    "timeline": {
+      "type": "string",
+      "enum": [
+        "1-2_weeks",
+        "2-4_weeks",
+        "1-2_months",
+        "2-3_months",
+        "3+_months"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "features_needed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewing",
+        "quoted",
+        "accepted",
+        "rejected",
+        "in_progress",
+        "completed"
+      ],
+      "default": "pending"
+    },
+    "estimated_price": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "project_type"
+  ]
+}

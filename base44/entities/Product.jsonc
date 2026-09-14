@@ -1,0 +1,83 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "theme",
+        "plugin",
+        "seo_package"
+      ],
+      "description": "Product type"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price in USD"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "wordpress",
+        "shopify",
+        "react",
+        "nextjs",
+        "analytics",
+        "performance",
+        "security",
+        "marketing"
+      ],
+      "description": "Product category"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Product image URL"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of features"
+    },
+    "demo_url": {
+      "type": "string",
+      "description": "Demo URL"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average rating"
+    },
+    "sales_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of sales"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "draft",
+        "archived"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "price"
+  ]
+}

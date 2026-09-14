@@ -1,0 +1,35 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "Product ID"
+    },
+    "product_title": {
+      "type": "string"
+    },
+    "product_type": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "customer_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed",
+        "refunded"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "product_id",
+    "amount"
+  ]
+}
